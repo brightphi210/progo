@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className={` lg:py-[5rem] py-[2rem] pb-[6rem] lg:px-[25rem] px-5 bg-neutral-900`}>
+    <div className={` lg:py-[5rem] py-[2rem] pb-[6rem] lg:px-[25rem] px-5 bg-neutral-950`}>
 
       <p className="text-center text-base pt-5">Get in touch</p>
       <ul className="lg:w-full w-[90%] px-5 m-auto justify-center flex items-center gap-10 mt-5">
