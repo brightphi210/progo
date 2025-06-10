@@ -8,22 +8,14 @@ import logo from '../src/assets/Progo logo Icon-01.png'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Contact from './pages/Contact';
 AOS.init();
 
 
 
 function App() {
 
-  const [isNavOpen, setIsNavOpen] = useState(false)
-
-  
-  const handleLinkClick = (sectionId : any) => {
-    setIsNavOpen(false);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,7 +30,7 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="bg-gradient-to-r from-stone-950 to-neutral-950 h-screen justify-center flex items-center">
+      <div className="bg-white h-screen justify-center flex items-center">
         <img 
           src={logo} 
           className="w-16 animate-zoom" 
@@ -49,9 +41,15 @@ function App() {
   }
 
   return (
-    <div className='bg-[#0e0e11]'>
-      <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} handleLinkClick={handleLinkClick}/>
-      <Home/>
+    <div className='bg-white'>
+
+      <Header/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
       <Footer/>
     </div>
   )
